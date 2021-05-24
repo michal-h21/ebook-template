@@ -34,19 +34,32 @@
 % REQUIRED PACKAGES
 %%%%%%%%%%%%%%%%%%%%%
 % latexbangla with all features
-\RequirePackage[banglamainfont=SolaimanLipi,
-                banglattfont=Siyam Rupali,
+\RequirePackage[banglamainfont=Kalpurush,
+                banglattfont=Kalpurush,
                ]{latexbangla}
+%activate polyglossia
+\setdefaultlanguage[numerals=Bengali,
+changecounternumbering=true]{bengali}
+%number all levels
+\setcounter{secnumdepth}{5}
+    \setotherlanguage{english}
+
+% Papersize
+% \RequirePackage[papersize={5.2in, 8.2in}, margin=0.8in, headheight=14.72pt]{geometry}
 
 % \inlcudegraphics
 \RequirePackage{graphicx}
-
+\RequirePackage{amsmath}
+%\usepackage{physics}
+\RequirePackage{mathtools}
+\RequirePackage{extarrows}
+\RequirePackage{enumitem}
+\setlist[itemize]{label*={\fontfamily{lmr}\selectfont\textbullet}}      % due to the Bangla fonts
 
 % for citation. they will be sorted and appear in text like [21]. 
 % see natbib manual for more available styles
 \RequirePackage[sort, square, numbers]{natbib}
-
-
+%\RequirePackage[backend=biber, sorting=none, language=english, autolang=other]{biblatex}
 
 % hyperlinks
 \RequirePackage[colorlinks=false, 
@@ -69,7 +82,7 @@
   \renewcommand*{\equationautorefname}{সমীকরণ}%
 }
 \appto{\blockextras@bengali}{%
-  \renewcommand*{\chapterautorefname}{অধ্যায়}%
+  \renewcommand*{\chapterautorefname}{নিবন্ধ}%
 }
 \appto{\blockextras@bengali}{%
   \renewcommand*{\sectionautorefname}{সেকশন}%
