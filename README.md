@@ -1,9 +1,9 @@
-# book-template
+# ebook-template
 
-Here you can find the template files for the book *কম্বিনেটরিকসে হাতেখড়ি* (Introduction to Combinatorics)[part 1](https://rokomari.com/book/180324/combinatoricse-hatekhori--1st-part), [part 2](https://www.rokomari.com/book/185613/combinatoricse-hatekhori--2nd-part). It is the first Bengali book written with LaTeXbangla, a package I authored some years ago. I hope this repo will assist prospective authors to produce high quality Bangla books in future. 
+This ebook-template is structured as a Bangla science magazine that will contain a collection of science and math articles of different authors. It's created using Adib Hasan's [LaTeXbangla package](https://github.com/Neehan/LaTeXbangla) and [book-template](https://github.com/Neehan/book-template) I hope his repo will continue assisting many prospective authors to produce high quality Bangla books in future. 
 
 ## Build Instructions
-**Fonts:** You'll need `SolaimanLipi`, `SiyamRupali` and `Monotype Corsiva` to build this project. They are not in the repo, as I do not have permission to redistribute them. So, download them from the internet and place the ttf files in the root directory. The file names have to be same as the names given above. (For instance, the file for Siyam Rupali must be named `SiyamRupali.ttf`)
+**Fonts:** You'll need `Kalpurush`, `SolaimanLipi`, `SiyamRupali` and `Monotype Corsiva` to build this project. They are not in the repo, as I do not have permission to redistribute them. So, download them from the internet and place the ttf files in the root directory. The file names have to be same as the names given above. (For instance, the file for Siyam Rupali must be named `SiyamRupali.ttf`)
 
 **LaTeX:** You must have a LaTeX distribution installed in your system. I recommend MikTeX for Windows and TeXWorks for Linux. To build the project, run **XeLaTeX and BibTeX** on `main.tex`. In Windows, the simplest way would be to open `main.tex` with MikTeX's default Editor, called TeXworks, then hit Build with `XeLaTeX+BibTeX+MakeIndex`. 
 
@@ -15,9 +15,9 @@ Here you can find the template files for the book *কম্বিনেটর�
 
 `bookstyle.sty`: Code for formatting.
 
-`latexbangla.sty`: The package LaTeXbangla with more features. It is called by `bookstyle.sty`.
+`articlestyle.sty`: Code for formatting.
 
-I have extensively commented in both `bookstyle.sty` and `latexbangla.sty`. The code should be pretty easy to follow. If not, please raise an issue.
+`latexbangla.sty`: The package [LaTeXbangla](https://github.com/Neehan/LaTeXbangla) with more features. It is called by `bookstyle.sty` and `articlestyle.sty`.
 
 ### General Guidelines
 Partition your source code by chapters. Place every chapter inside `chap` directory, in its own file. Then add the chapters to `main.tex` with `\include` command. Your figures should be placed inside `img` directory and partitioned by chapters. Lastly, add your bibliography to `bookbib.bib`. 
