@@ -1,6 +1,6 @@
 # ebook-template
 
-This ebook-template is structured as a Bangla science magazine that will contain a collection of science and math articles of different authors. It's created using Adib Hasan's [LaTeXbangla package](https://github.com/Neehan/LaTeXbangla) and [book-template](https://github.com/Neehan/book-template) I hope his repo will continue assisting many prospective authors to produce high quality Bangla books in future. 
+This ebook-template is structured as a magazine in Bangla language such that it can contain a collection of science and math articles of different authors. Thanks to [Adib Hasan](https://github.com/Neehan) for creating the beautiful [LaTeXbangla package](https://github.com/Neehan/LaTeXbangla) and [book-template](https://github.com/Neehan/book-template). I hope his repos will be more improved and will continue assisting many prospective authors to produce high quality Bangla books in future. 
 
 ## Build Instructions
 **Fonts:** You'll need `Kalpurush`, `SolaimanLipi`, `SiyamRupali` and `Monotype Corsiva` to build this project. They are not in the repo, as I do not have permission to redistribute them. So, download them from the internet and place the ttf files in the root directory. The file names have to be same as the names given above. (For instance, the file for Siyam Rupali must be named `SiyamRupali.ttf`)
