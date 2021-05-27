@@ -1,7 +1,24 @@
+\title{
+\includegraphics[width=0.5\textwidth]{example-image}~\\[1cm]
+নিবন্ধ সংকলন
+}
+\author{সম্পাদনায় \\ 
+সম্পাদক\\ 
+সহ-সম্পাদক}
+\date{}
+
+\begin{titlepage}
+\includepdf[pages=1, fitpaper]{cover}
 \thispagestyle{empty}
+\predate{\centering}
+\postdate{\vfill\hfill {\\অলংকরণে\\ মুবতাসিম ফুয়াদ\\  \uccoff{\fontfamily{lmr}\selectfont ©} \href{https://github.com/rafisics/ebook-template}{আদীব হাসানের টেমপ্লেট}\\}\hfill}     % https://tex.stackexchange.com/a/199356/114006
 \maketitle
-\vspace*{\fill}
-\begin{center}
-	\uccoff{\fontfamily{lmr}\selectfont ©} ২০১৯~~আদীব হাসান
-	\pagebreak
-\end{center}
+\end{titlepage}
+
+\pagenumbering{roman}
+\newpage
+\setcounter{tocdepth}{0}
+\tableofcontents
+\newpage
+\pagestyle{plain}
+\pagenumbering{arabic}

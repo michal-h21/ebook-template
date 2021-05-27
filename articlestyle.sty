@@ -1,0 +1,77 @@
+% !TEX root = main.tex
+% --------------------------------------------------------------
+% Article Style
+% --------------------------------------------------------------
+
+%% The below setup if From My preambles of main.tex file
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \RequirePackage{docmute}
+% \RequirePackage{amsmath, amsfonts, amssymb, amsthm}
+%\RequirePackage{physics}
+\RequirePackage{graphicx}
+\RequirePackage{mathtools}
+\RequirePackage{extarrows}
+\RequirePackage{enumitem}
+\RequirePackage{lipsum}
+\RequirePackage{blindtext}
+\RequirePackage{mwe}
+\setlist[itemize]{label*={\fontfamily{lmr}\selectfont\textbullet}}      % due to the Bangla fonts
+
+\RequirePackage[papersize={5.5in, 8.5in}, margin=0.8in, headheight=14.72pt]{geometry}
+\linespread{1.15}
+
+ % For a bilingual document
+\RequirePackage[banglamainfont=Kalpurush,
+                banglattfont=Kalpurush,
+               ]{latexbangla}
+%activate polyglossia
+\setdefaultlanguage[numerals=Bengali,
+changecounternumbering=true]{bengali}
+%number all levels
+\setcounter{secnumdepth}{5}
+    \setotherlanguage{english}
+%..............
+\RequirePackage{csquotes}
+\RequirePackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\urlstyle{same}
+
+% Adding header ann footer on pages
+\RequirePackage{fancyhdr}
+\fancypagestyle{plain}{
+  \fancyhf{}                              % clear all header and footer fields
+  \lhead{\href{https://github.com/rafisics/ebook-template}{নিবন্ধ সংকলন}}
+  % \rhead{\href{https://github.com/rafisics/ebook-template}{মুবতাসিম ফুয়াদ}}
+  \cfoot{\thepage}    
+  \renewcommand{\headrulewidth}{0.5pt}
+  \renewcommand{\footrulewidth}{0.5pt}
+}
+
+% Adding References 
+% \RequirePackage[backend=biber, sorting=none, language=english, autolang=other]{biblatex}
+% \addbibresource{ref.bib}
+
+% Adding pdf pages 
+\RequirePackage{pdfpages}
+
+%to allow long align env. to break between pages
+\allowdisplaybreaks
+
+% % https://tex.stackexchange.com/a/177179/114006        (need to improve)
+% \tolerance=1       
+% \emergencystretch=\maxdimen
+% \hyphenpenalty=10000
+% \hbadness=10000
+
+% Path relative to the main .tex file 
+\graphicspath{ {./img/} } 
+
+\pagestyle{plain}
+
+\endinput
