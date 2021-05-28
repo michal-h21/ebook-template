@@ -1,6 +1,6 @@
 % !TEX root = main.tex
 % --------------------------------------------------------------
-% Book Style 
+% Book Style
 % --------------------------------------------------------------
 
 % % space between line as percentage
@@ -81,7 +81,7 @@ changecounternumbering=true]{bengali}
 %       rotate=90,
 %       anchor=south,
 %       font=\color{black}\Large
-%       ] at ([xshift=-5pt]num.west) {\chaptertitlename};  
+%       ] at ([xshift=-5pt]num.west) {\chaptertitlename};
 %     \end{tikzpicture}%
 %   }
 %   {-30pt}
@@ -101,7 +101,7 @@ changecounternumbering=true]{bengali}
 % table of contents formatting
 \RequirePackage{tocloft}
 \def\cftchapteraftersnum{.}
-\renewcommand\cftchapafterpnum{\vskip-5pt}         % Decreasing the line spacing between the names of chapters
+% \renewcommand\cftchapafterpnum{\vskip-5pt}         % Decreasing the line spacing between the names of chapters
 
 % % footnote in tables appear the end of page
 % \RequirePackage{footnote}
@@ -156,7 +156,7 @@ changecounternumbering=true]{bengali}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
-    filecolor=magenta,      
+    filecolor=magenta,
     urlcolor=cyan,
 }
 \urlstyle{same}
@@ -167,34 +167,34 @@ changecounternumbering=true]{bengali}
   \fancyhf{}                              % clear all header and footer fields
   \lhead{\href{https://github.com/rafisics/ebook-template}{নিবন্ধ সংকলন}}
   % \rhead{\href{https://github.com/rafisics/ebook-template}{মুবতাসিম ফুয়াদ}}
-  \cfoot{\thepage}    
+  \cfoot{\thepage}
   \renewcommand{\headrulewidth}{0.5pt}
   \renewcommand{\footrulewidth}{0.5pt}
 }
 
-% Adding References 
+% Adding References
 % \RequirePackage[backend=biber, sorting=none, language=english, autolang=other]{biblatex}
 % \addbibresource{ref.bib}
 
-% Adding pdf pages 
+% Adding pdf pages
 \RequirePackage{pdfpages}
 
 %to allow long align env. to break between pages
 \allowdisplaybreaks
 
 % % https://tex.stackexchange.com/a/177179/114006        (need to improve)
-% \tolerance=1       
+% \tolerance=1
 % \emergencystretch=\maxdimen
 % \hyphenpenalty=10000
 % \hbadness=10000
 
-% Path relative to the main .tex file 
-\graphicspath{ {./img/} } 
+% Path relative to the main .tex file
+\graphicspath{ {./img/} }
 
 % Adding footer on title page               https://tex.stackexchange.com/a/199356/114006
-\RequirePackage{titling} 
+\RequirePackage{titling}
 
-%% Chapter title page style 
+%% Chapter title page style
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Chapter sign before section number
@@ -203,11 +203,11 @@ changecounternumbering=true]{bengali}
 \makeatother
 
 % Removing the vertical blank space before chapter heading     % https://stackoverflow.com/a/3284059/7673979
-\RequirePackage{titlesec} 
+\RequirePackage{titlesec}
 \titleformat{\chapter}[display]
 {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
 
-\titlespacing*{\chapter} {0pt}{0pt}{40pt}     % this alters "before" spacing (the second length argument) to 0      
+\titlespacing*{\chapter} {0pt}{0pt}{40pt}     % this alters "before" spacing (the second length argument) to 0
 
 % Adding Chapter Authors after chapter title:   https://tex.stackexchange.com/a/156865/114006
 \RequirePackage{suffix}
@@ -232,6 +232,6 @@ changecounternumbering=true]{bengali}
 \makeatother
 
 % Command for chapter title photo                    % https://tex.stackexchange.com/a/91620/114006
-\newcommand{\chapterphoto}[1]{\includegraphics[width=\textwidth, keepaspectratio]{#1}~\\[1cm]}            
+\newcommand{\chapterphoto}[1]{\includegraphics[width=\textwidth, keepaspectratio]{#1}~\\[1cm]}
 
 % Command for chapter title photo
