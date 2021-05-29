@@ -197,17 +197,20 @@ changecounternumbering=true]{bengali}
 %% Chapter title page style
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Chapter sign before section number
-\makeatletter
-\renewcommand{\@chapapp}{{\uccoff\fontfamily{lmr}\selectfont\Huge§\,\uccon}}
-\makeatother
-
-% Removing the vertical blank space before chapter heading     % https://stackoverflow.com/a/3284059/7673979
+% Adding chapter sign and removing the vertical blank space before chapter heading     % https://stackoverflow.com/a/3284059/7673979
 \RequirePackage{titlesec}
 \titleformat{\chapter}[display]
-{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+% {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+% {\normalfont\huge\bfseries}{{\Huge\S\,}\ \thechapter}{20pt}{\Huge}        % Adding \S sign before on chapter number in English doc with default font
+{\normalfont\huge\bfseries}{{\uccoff\fontfamily{lmr}\selectfont\Huge§\,\uccon}\ \thechapter}{20pt}{\Huge}     % % Adding \S sign before on chapter number in Bangla doc with latexbangla
 
 \titlespacing*{\chapter} {0pt}{0pt}{40pt}     % this alters "before" spacing (the second length argument) to 0
+
+
+% % Chapter sign before chapter number
+% \makeatletter
+% \renewcommand{\@chapapp}{{\uccoff\fontfamily{lmr}\selectfont\Huge§\,\uccon}}
+% \makeatother
 
 % Adding Chapter Authors after chapter title:   https://tex.stackexchange.com/a/156865/114006
 \RequirePackage{suffix}
