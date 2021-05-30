@@ -109,6 +109,7 @@ changecounternumbering=true]{bengali}
 
 % better float management
 \RequirePackage{placeins}
+\usepackage{float}     % https://tex.stackexchange.com/a/8633/114006
 % % multiple columns
 % \RequirePackage{multicol}
 % % compilation time decreases significantly with this package
@@ -152,16 +153,17 @@ changecounternumbering=true]{bengali}
 %     \setotherlanguage{english}
 %..............
 \RequirePackage{csquotes}             % https://tex.stackexchange.com/q/39285/114006
+\RequirePackage[dvipsnames,svgnames,x11names,hyperref]{xcolor}   % https://tex.stackexchange.com/a/4506/114006
 \RequirePackage{hyperref}
 \hypersetup{
-    colorlinks=true,
+    colorlinks=true, breaklinks,
     linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=cyan,
+    filecolor=magenta, 
+    urlcolor=teal, 
 }
 \urlstyle{same}
 
-% Adding header ann footer on pages
+% Adding header and footer on pages
 \RequirePackage{fancyhdr}
 \fancypagestyle{plain}{
   \fancyhf{}                              % clear all header and footer fields
@@ -221,7 +223,7 @@ changecounternumbering=true]{bengali}
 \makeatletter
 \newcommand{\printchapterauthor}[1]{%
   {\parindent0pt\vspace*{-25pt}%
-  \linespread{1.1}\Large\scshape#1%
+  \linespread{1.1}\spaceskip=7pt\Large\scshape#1%
   \par\nobreak\vspace*{35pt}}
   \@afterheading%
 }

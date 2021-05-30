@@ -1,11 +1,11 @@
 \title{
 \includegraphics[width=0.5\textwidth]{example-image}~\\[1cm]
-নিবন্ধ সংকলন
-}
+নিবন্ধ সংকলন}
 \author{সম্পাদনায় \\ 
 সম্পাদক\\ 
 সহ-সম্পাদক}
-\date{}
+
+\date{২০২১}
 
 \begin{titlepage}
 \includepdf[pages=1, fitpaper]{cover}
@@ -15,10 +15,36 @@
 \maketitle
 \end{titlepage}
 
-\pagenumbering{roman}
+% Adding dedication and preface                     https://tex.stackexchange.com/a/51539/114006
+
+\pagestyle{empty}
+\vspace*{\stretch{1}}
+\begin{flushright}
+\itshape
+আমাদের প্রত্যেক \\ পাঠক এবং শুভাকাঙ্ক্ষীর \\ প্রতি উৎসর্গীকৃত
+\end{flushright}
+\vspace{\stretch{3}}
+
+\cleardoublepage
+
 \newpage
+\pagestyle{plain}
+\pagenumbering{roman}
+
+\chapter{সম্পাদকীয়}
+\firstword{T}{he} is the preface/abstract of the book.
+\blindtext \\
+
+\section*{কৃতজ্ঞতা}
+\firstword{T}{he} is the acknowledgement of the book.
+\blindtext \\
+\hspace*{\fill} {— সম্পাদক,  তারিখ}
+
+\cleardoublepage
+
 \setcounter{tocdepth}{0}
 \tableofcontents
+
 \newpage
 \pagestyle{plain}
 \pagenumbering{arabic}
