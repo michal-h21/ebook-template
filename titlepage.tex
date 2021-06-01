@@ -1,16 +1,16 @@
 \title{
-\includegraphics[width=0.5\textwidth]{example-image}~\\[1cm]
+\includegraphics[width=0.3\textwidth]{example-image}~\\[0.5cm]
 নিবন্ধ সংকলন}
-\author{সম্পাদনায় \\ 
+\author{\footnotesize{সম্পাদনায়} \\ 
 সম্পাদক\\ 
 সহ-সম্পাদক}
 
-\date{২০২১}
+\date{\small ২০২১}
 
 \begin{titlepage}
 \includepdf[pages=1, fitpaper]{cover}
 \thispagestyle{empty}
-\predate{\centering}
+\predate{\centering \footnotesize{প্রকাশনায়}\\ \large{\href{<url>}{প্রকাশক}} \\}
 \postdate{\vfill\hfill \footnotesize{\\অলংকরণে\\ মুবতাসিম ফুয়াদ\\  \uccoff{\fontfamily{lmr}\selectfont ©} \href{https://github.com/rafisics/ebook-template}{আদীব হাসানের টেমপ্লেট}\\}\hfill}     % https://tex.stackexchange.com/a/199356/114006
 \maketitle
 \end{titlepage}
@@ -32,13 +32,21 @@
 \pagenumbering{roman}
 
 \chapter{সম্পাদকীয়}
+\begin{chapquote}{Carl Sagan}
+	One glance at a book and you hear the voice of another person, perhaps someone dead for 1000 years. To read is to voyage through time.
+\end{chapquote}
+
 \firstword{T}{he} is the preface/abstract of the book.
 \blindtext \\
 
 \section*{কৃতজ্ঞতা}
 \firstword{T}{he} is the acknowledgement of the book.
 \blindtext \\
-\hspace*{\fill} {— সম্পাদক,  তারিখ}
+
+\begin{flushright}
+\itshape
+সম্পাদক, \href{<url>}{নিবন্ধ সংকলন} \\ জুন ২০২১
+\end{flushright}
 
 \cleardoublepage
 

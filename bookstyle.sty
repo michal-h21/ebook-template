@@ -99,8 +99,10 @@ changecounternumbering=true]{bengali}
 \newcommand{\firstword}[2]{\lettrine[lraise=0.25, nindent=0pt, findent=2pt]{#1}{#2}}
 
 % table of contents formatting
-\RequirePackage{tocloft}
-\def\cftchapteraftersnum{.}
+\usepackage{tocloft}
+\setlength{\cftbeforetoctitleskip}{0em}              % https://tex.stackexchange.com/a/46863/114006
+\setlength{\cftaftertoctitleskip}{0em}               
+\renewcommand{\cftchapaftersnum}{.}                  % https://tex.stackexchange.com/a/567930/114006
 % \renewcommand\cftchapafterpnum{\vskip-5pt}         % Decreasing the line spacing between the names of chapters
 
 % % footnote in tables appear the end of page
@@ -118,6 +120,24 @@ changecounternumbering=true]{bengali}
 % % breakable tables
 % \RequirePackage{longtable}
 
+% NEW ENVIRONMENTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% new font for quotation
+\newfontfamily\quotefont[%
+    Scale= 1.1,
+    WordSpace=1.4,
+    AutoFakeSlant=1.2,
+    AutoFakeBold=1.2
+    ]{[Monotype Corsiva]}
+
+% A chapquote environment for chapter quotes
+\newenvironment{chapquote}[2][2em]
+{\setlength{\@tempdima}{#1}%
+    \def\chapquote@author{#2}%
+    \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+    \uccoff\quotefont
+}
+{\par\hfill―\ \uccon\chapquote@author\hspace*{\@tempdima}\par\bigskip}
 
 % % for customizable boxes
 % \RequirePackage[many]{tcolorbox}
@@ -152,7 +172,7 @@ changecounternumbering=true]{bengali}
 % \setcounter{secnumdepth}{5}
 %     \setotherlanguage{english}
 %..............
-\RequirePackage{csquotes}             % https://tex.stackexchange.com/q/39285/114006
+\RequirePackage[autostyle]{csquotes}             % https://tex.stackexchange.com/q/39285/114006
 \RequirePackage[dvipsnames,svgnames,x11names,hyperref]{xcolor}   % https://tex.stackexchange.com/a/4506/114006
 \RequirePackage{hyperref}
 \hypersetup{
