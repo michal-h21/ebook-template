@@ -168,7 +168,12 @@ changecounternumbering=true]{bengali}
 \RequirePackage{mwe}
 \setlist[itemize]{label*={\fontfamily{lmr}\selectfont\textbullet}}      % due to the Bangla fonts
 
-\RequirePackage[papersize={5.5in, 8.5in}, margin=0.8in, headheight=14.72pt]{geometry}
+\RequirePackage[
+    papersize={5.5in, 8.5in}, 
+    % margin=0.8in, 
+    top=0.8in, bottom=0.8in, left=0.6in, right=0.6in, 
+    headheight=14.72pt
+    ]{geometry}
 \linespread{1.15}
 
 %  % For a bilingual document
@@ -269,4 +274,20 @@ changecounternumbering=true]{bengali}
 % Command for chapter title photo                    % https://tex.stackexchange.com/a/91620/114006
 \newcommand{\chapterphoto}[1]{\includegraphics[width=\textwidth]{#1}\vspace{0.5cm}}
 
-% Command for chapter title photo
+% Adding chapter ending symbol    https://tex.stackexchange.com/a/97175/114006
+\RequirePackage{pgfornament}
+\RequirePackage{xifthen}
+
+\newcommand{\chapterend}{
+    \par
+    \vspace{\stretch{1}}
+    \begin{center}
+    \pgfornament[width=2.5cm]{84}
+    \end{center}
+    \vspace{\stretch{2}}
+    }
+
+% \newcommand\measurepage{\dimexpr\pagegoal-\pagetotal-\baselineskip\relax}
+
+% \newcommand{\chapterend}{
+%     \ifthenelse{\lengthtest{\measurepage>150pt}}{\chapterendsymbol}{}}
