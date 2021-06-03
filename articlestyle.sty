@@ -6,6 +6,8 @@
 %% The below setup if From My preambles of main.tex file
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% paragraph indent
+\setlength{\parindent}{0pt}      % https://www.overleaf.com/learn/latex/
 % better float management
 \RequirePackage{placeins}
 \usepackage{float}     % https://tex.stackexchange.com/a/8633/114006
@@ -77,3 +79,26 @@ changecounternumbering=true]{bengali}
 \graphicspath{ {./img/} }
 
 \pagestyle{plain}
+
+% enlarged first letter
+\RequirePackage{lettrine}
+\newcommand{\firstword}[2]{\lettrine[lraise=0.25, nindent=0pt, findent=2pt]{#1}{#2}}
+
+% new font for quotation
+\newfontfamily\quotefont[%
+    Scale= 1.1,
+    WordSpace=1.4,
+    AutoFakeSlant=1.2,
+    AutoFakeBold=1.2
+    ]{[Monotype Corsiva]}
+% \qtext command for english quote texts
+\newcommand\qtext[1]{{\normalfont \uccoff \quotefont #1 \uccon}}
+% \Chapquote command for quotes
+\NewDocumentCommand\chapquote{mmO{}}{
+        \begin{quotation} 
+              \noindent  \itshape{#1} \vspace*{-0.5\baselineskip} 
+                \begin{flushright} 
+                        \textemdash \, \normalfont{#2} \\ \vspace*{-0.1\baselineskip} 
+                        \footnotesize\itshape{#3}
+                \end{flushright} 
+        \end{quotation} }                              % https://tex.stackexchange.com/a/224069/114006

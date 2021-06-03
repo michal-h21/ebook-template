@@ -6,9 +6,9 @@
 % % space between line as percentage
 % \linespread{1.15}
 % % space between paragraphs.
-% % \setlength{\parskip}{4pt}
+% \setlength{\parskip}{4pt}
 % % paragraph indent
-% \setlength{\parindent}{0pt}
+\setlength{\parindent}{0pt}      % https://www.overleaf.com/learn/latex/Paragraph_formatting#Paragraph_Indentation
 % % discourage breaking of footnote text accorss multiple pages.
 % \interfootnotelinepenalty=1000
 % % to take care of nonbreakingspace issue in EU1 format of the .bbl
@@ -129,15 +129,25 @@ changecounternumbering=true]{bengali}
     AutoFakeSlant=1.2,
     AutoFakeBold=1.2
     ]{[Monotype Corsiva]}
-
-% A chapquote environment for chapter quotes
-\newenvironment{chapquote}[2][2em]
-{\setlength{\@tempdima}{#1}%
-    \def\chapquote@author{#2}%
-    \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
-    \uccoff\quotefont
-}
-{\par\hfill―\ \uccon\chapquote@author\hspace*{\@tempdima}\par\bigskip}
+% \qtext command for english quote texts
+\newcommand\qtext[1]{{\normalfont \uccoff \quotefont #1 \uccon}}
+% \Chapquote command for quotes
+\NewDocumentCommand\chapquote{mmO{}}{
+        \begin{quotation} 
+              \noindent  \itshape{#1} \vspace*{-0.5\baselineskip} 
+                \begin{flushright} 
+                        \textemdash \, \normalfont{#2} \\ \vspace*{-0.1\baselineskip} 
+                        \footnotesize\itshape{#3}
+                \end{flushright} 
+        \end{quotation} }                              % https://tex.stackexchange.com/a/224069/114006
+% % A chapquote environment for chapter quotes
+% \newenvironment{chapquote}[2][2em]
+% {\setlength{\@tempdima}{#1}%
+%     \def\chapquote@author{#2}%
+%     \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+%     \uccoff\quotefont
+% }
+% {\par\hfill―\ \uccon\chapquote@author\hspace*{\@tempdima}\par\bigskip}
 
 % % for customizable boxes
 % \RequirePackage[many]{tcolorbox}
