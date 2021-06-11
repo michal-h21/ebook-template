@@ -21,9 +21,16 @@
 \RequirePackage{lipsum}
 \RequirePackage{blindtext}
 \RequirePackage{mwe}
+\RequirePackage{caption}
+\RequirePackage{subcaption}               % https://tex.stackexchange.com/a/119985/114006
 \setlist[itemize]{label*={\fontfamily{lmr}\selectfont\textbullet}}      % due to the Bangla fonts
 
-\RequirePackage[papersize={5.5in, 8.5in}, margin=0.8in, headheight=14.72pt]{geometry}
+\RequirePackage[
+    papersize={5.5in, 8.5in}, 
+    % margin=0.8in, 
+    top=0.8in, bottom=0.8in, left=0.6in, right=0.6in, 
+    headheight=14.72pt
+    ]{geometry}
 \linespread{1.15}
 
  % For a bilingual document

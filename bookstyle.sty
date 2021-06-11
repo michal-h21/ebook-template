@@ -166,6 +166,8 @@ changecounternumbering=true]{bengali}
 \RequirePackage{lipsum}
 \RequirePackage{blindtext}
 \RequirePackage{mwe}
+\RequirePackage{caption}
+\RequirePackage{subcaption}               % https://tex.stackexchange.com/a/119985/114006
 \setlist[itemize]{label*={\fontfamily{lmr}\selectfont\textbullet}}      % due to the Bangla fonts
 
 \RequirePackage[
@@ -266,7 +268,7 @@ changecounternumbering=true]{bengali}
   \addtocontents{toc}{\vskip-10pt}%
   \addtocontents{toc}{%
     \protect\contentsline{chapter}%
-    {\hskip1.5em\mdseries\scshape\protect\footnotesize#1}{}{}}
+    {\hskip1.5em\mdseries\scshape\protect\spaceskip=4pt\footnotesize#1}{}{}}
   \addtocontents{toc}{\vskip-5pt}%
 }
 \makeatother
