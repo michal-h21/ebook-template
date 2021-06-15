@@ -4,15 +4,15 @@
 % --------------------------------------------------------------
 
 % % space between line as percentage
-% \linespread{1.15}
+\linespread{1.15}
 % % space between paragraphs.
-% \setlength{\parskip}{4pt}
+\setlength{\parskip}{4pt}
 % % paragraph indent
 \setlength{\parindent}{0pt}      % https://www.overleaf.com/learn/latex/Paragraph_formatting#Paragraph_Indentation
 % % discourage breaking of footnote text accorss multiple pages.
 % \interfootnotelinepenalty=1000
 % % to take care of nonbreakingspace issue in EU1 format of the .bbl
-% \DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ }
+\DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ }
 
 
 % REQUIRED PACKAGES
@@ -162,13 +162,13 @@ changecounternumbering=true]{bengali}
 \RequirePackage{graphicx}
 \RequirePackage{mathtools}
 \RequirePackage{extarrows}
-\RequirePackage{enumitem}
+% \RequirePackage{enumitem}
 \RequirePackage{lipsum}
 \RequirePackage{blindtext}
 \RequirePackage{mwe}
 \RequirePackage[font=footnotesize]{caption}
 \RequirePackage[font=footnotesize]{subcaption}               % https://tex.stackexchange.com/a/119985/114006
-\setlist[itemize]{label*={\fontfamily{lmr}\selectfont\textbullet}}      % due to the Bangla fonts
+% \setlist[itemize]{label*={\uccoff\fontfamily{lmr}\selectfont\textbullet \uccon}}       % due to the Bangla fonts
 
 \RequirePackage[
     papersize={5.5in, 8.5in}, 
@@ -293,3 +293,14 @@ changecounternumbering=true]{bengali}
 
 % \newcommand{\chapterend}{
 %     \ifthenelse{\lengthtest{\measurepage>150pt}}{\chapterendsymbol}{}}
+
+% Lists with special labels
+\newcommand{\bulletlabel}{\raisebox{0.5pt}{\uccoff\fontfamily{lmr}\selectfont\textbullet\uccon}}
+\newcounter{myitemizecounter}
+\newenvironment{myitemize}
+{\begin{list}{\bulletlabel\;\;}{\labelsep=0em \labelwidth=2em}}{\end{list}}
+
+\newcommand{\diamondlabel}{\raisebox{2.5pt}{\includegraphics[height=8pt, angle=135]{listbullet01}}}
+\newcounter{mylistcounter}
+\newenvironment{mylist}
+{\begin{list}{\diamondlabel\;\;}{\labelsep=0em \labelwidth=2em}}{\end{list}}
