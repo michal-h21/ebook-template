@@ -29,8 +29,9 @@
 \end{figure}
 
 \firstword{Y}{ou} can put a drop-cap on the first word.
-\lipsum
+\blindtext
 
+% https://tex.stackexchange.com/a/119985/114006
 \begin{figure}[hbt!]
     \centering
     \begin{subfigure}[t]{0.5\textwidth}
@@ -38,7 +39,7 @@
         \includegraphics[height=1.2in]{example-image-a}
         \caption{Image of A}
     \end{subfigure}%
-    ~
+    % ~
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[height=1.2in]{example-image-b}
@@ -47,8 +48,55 @@
     \caption{Comparison between the images of A and B}
 \end{figure}
 
+% https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_3):_Figures,_Subfigures_and_Tables
+
+\begin{figure}[hbt!]
+     \centering
+     \begin{subfigure}[t]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{example-image}
+         \cprotect\caption{\verb|example-image|}
+         \label{fig:example}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[t]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{example-image-a}
+         \cprotect\caption{\verb|example-image-a|}
+         \label{fig:a}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[t]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{example-image-b}
+         \cprotect\caption{\verb|example-image-b|}
+         \label{fig:b}
+     \end{subfigure}
+        \caption{Three example images}
+        \label{fig:three graphs}
+\end{figure}
+
+\lipsum[3]
+% https://wwlw.overleaf.com/learn/latex/Wrapping_text_around_figures
+
+\begin{wrapfigure}{r}{0.4\textwidth}                 % https://tex.stackexchange.com/a/56177/114006
+        \centering
+        \rule{4cm}{6cm}
+        \cprotect\caption{Wraped figure using \verb|\begin{wrapfigure}|}           % https://tex.stackexchange.com/a/8814/114006
+\end{wrapfigure}
+
+\blindtext
+
+\begin{wrapfigure}{R}{0.5\textwidth}                 
+        \centering
+        \includegraphics[height=1.2in]{example-image-golden}
+        \caption{Image of Golden Ratio}
+\end{wrapfigure}
+
+\lipsum[1-4]
+
 % % generates a paragraph of dummy lorem ipsum text
-%\blindtext
+% \blindtext
 
 % generates multiple paragraphs of dummy lorem ipsum text
 % \Blindtext
