@@ -242,7 +242,7 @@ TSWLatexianTemp*
 *.spl
 
 # ignoring the PDFs of invididual chapter/article
-article*.pdf
+# article*.pdf
 
 # ignoring the test files
 test*
