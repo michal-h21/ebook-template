@@ -12,7 +12,7 @@
 % % discourage breaking of footnote text accorss multiple pages.
 % \interfootnotelinepenalty=1000
 % % to take care of nonbreakingspace issue in EU1 format of the .bbl
-\DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ }
+% \DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ }
 
 
 % REQUIRED PACKAGES
@@ -131,15 +131,29 @@ changecounternumbering=true]{bengali}
     ]{[Monotype Corsiva]}
 % \qtext command for english quote texts
 \newcommand\qtext[1]{{\normalfont \uccoff \quotefont #1 \uccon}}
-% \Chapquote command for quotes
-\NewDocumentCommand\chapquote{mmO{}}{
-        \begin{quotation} 
-              \noindent  \itshape{#1} \vspace*{-0.5\baselineskip} 
-                \begin{flushright} 
-                        \textemdash \, \normalfont{#2} \\ \vspace*{-0.1\baselineskip} 
-                        \footnotesize\itshape{#3}
-                \end{flushright} 
-        \end{quotation} }                              % https://tex.stackexchange.com/a/224069/114006
+
+% \chapquote command for quotes with author or source
+\RequirePackage{xparse}                % https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/
+\NewDocumentCommand\chapquote{mO{}O{}}{
+    \begin{quotation} 
+        \noindent  \itshape{#1}
+        \IfValueTF {#2}{
+            \vspace*{-0.5\baselineskip} 
+            \begin{flushright} 
+                \textemdash \, \normalfont{#2} \\ \vspace*{-0.1\baselineskip} 
+                \footnotesize\itshape{#3}
+            \end{flushright}
+        }{}
+    \end{quotation} 
+}                              % https://tex.stackexchange.com/a/224069/114006
+
+% \quote command for quotes with no author or source
+\RenewDocumentCommand\quote{m}{
+    \begin{quotation} 
+        \noindent  \itshape{#1}
+    \end{quotation} 
+} 
+
 % % A chapquote environment for chapter quotes
 % \newenvironment{chapquote}[2][2em]
 % {\setlength{\@tempdima}{#1}%

@@ -20,8 +20,6 @@
 
 % \maketitle                                % Use \maketitle if you want to compile it individually
 
-\section{সেকশন}
-
 \begin{figure}[hbt!]
         \centering
         \includegraphics[width=0.8\textwidth]{example-image}
@@ -29,6 +27,8 @@
 \end{figure}
 
 \firstword{Y}{ou} can put a drop-cap on the first word. \blindtext \\
+
+\section*{সেকশন: List Styles}
 
 Using \verb|\begin{itemize} ... \end{itemize}|
 \begin{itemize}
@@ -56,8 +56,17 @@ Using \verb|\begin{enumerate} ... \end{enumerate}|
 
 \lipsum[3]
 
+\section*{সেকশন: Quote Styles}
+
+\begin{mylist}
+        \item \verb|\chapquote| (with \verb|author| and/or \verb|source|):
+                \chapquote{Lorem ipsum dolor sit amet}[Quote Author][Quote Source]
+        \item \verb|\quote| (without \verb|author| and \verb|source|):
+                \quote{Lorem ipsum dolor sit amet}
+\end{mylist}
+
 % % generates a paragraph of dummy lorem ipsum text
-%\blindtext
+% \blindtext
 
 % generates multiple paragraphs of dummy lorem ipsum text
 % \Blindtext
