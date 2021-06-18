@@ -20,7 +20,7 @@
 
 % \maketitle                                % Use \maketitle if you want to compile it individually
 
-\begin{figure}[hbt!]
+\begin{figure}[htbp]
         \centering
         \includegraphics[width=0.8\textwidth]{example-image}
         \caption{Donec vehicula augue eu neque.}
@@ -58,12 +58,14 @@ Using \verb|\begin{enumerate} ... \end{enumerate}|
 
 \section*{সেকশন: Quote Styles}
 
-\begin{mylist}
-        \item \verb|\chapquote| (with \verb|author| and/or \verb|source|):
-                \chapquote{Lorem ipsum dolor sit amet}[Quote Author][Quote Source]
-        \item \verb|\quote| (without \verb|author| and \verb|source|):
-                \quote{Lorem ipsum dolor sit amet}
-\end{mylist}
+Using \verb|\chapquote| (with \verb|author| and/or \verb|source|): \\
+
+\chapquote{Lorem ipsum dolor sit amet}[Quote Author][Quote Source]
+
+Using \verb|\quote| (without \verb|author| and \verb|source|): \\
+
+\quote{Lorem ipsum dolor sit amet}
+
 
 % % generates a paragraph of dummy lorem ipsum text
 % \blindtext
