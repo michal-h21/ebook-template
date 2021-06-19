@@ -246,3 +246,5 @@ TSWLatexianTemp*
 
 # ignoring the test files
 test*
+# ignoring the font files
+*ttf
