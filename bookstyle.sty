@@ -101,7 +101,7 @@ changecounternumbering=true]{bengali}
 % table of contents formatting
 \RequirePackage{tocloft}
 \setlength{\cftbeforetoctitleskip}{0em}              % https://tex.stackexchange.com/a/46863/114006
-\setlength{\cftaftertoctitleskip}{0em}               
+\setlength{\cftaftertoctitleskip}{0em}
 \renewcommand{\cftchapaftersnum}{.}                  % https://tex.stackexchange.com/a/567930/114006
 % \renewcommand\cftchapafterpnum{\vskip-5pt}         % Decreasing the line spacing between the names of chapters
 
@@ -132,19 +132,19 @@ changecounternumbering=true]{bengali}
 % \qtext command for english quote texts
 \newcommand\qtext[1]{{\normalfont \uccoff \quotefont #1 \uccon}}
 
-% \chapquote command for quotes with author or source
-\RequirePackage{xparse}                % https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/
-\NewDocumentCommand\chapquote{mO{}O{}}{
-    \begin{quotation} 
-        \noindent  \itshape{#1}
-        \IfValueTF {#2}{
-            \vspace*{-0.5\baselineskip} 
-            \begin{flushright} 
-                \textemdash \quad \normalfont{#2} \par \footnotesize\itshape{#3}
-            \end{flushright}
-        }{}
-    \end{quotation} 
-}                              % https://tex.stackexchange.com/a/224069/114006
+% % \chapquote command for quotes with author or source
+% \RequirePackage{xparse}                % https://www.texdev.net/2010/05/23/from-newcommand-to-newdocumentcommand/
+% \NewDocumentCommand\chapquote{mO{}O{}}{
+%     \begin{quotation} 
+%         \noindent  \itshape{#1}
+%         \IfValueTF {#2}{
+%             \vspace*{-0.5\baselineskip} 
+%             \begin{flushright} 
+%                 \textemdash \quad \normalfont{#2} \par \footnotesize\itshape{#3}
+%             \end{flushright}
+%         }{}
+%     \end{quotation} 
+% }                              % https://tex.stackexchange.com/a/224069/114006
 
 % \quote command for quotes with no author or source
 \RenewDocumentCommand\quote{m}{
@@ -153,14 +153,23 @@ changecounternumbering=true]{bengali}
     \end{quotation} 
 } 
 
-% % A chapquote environment for chapter quotes
-% \newenvironment{chapquote}[2][2em]
-% {\setlength{\@tempdima}{#1}%
-%     \def\chapquote@author{#2}%
-%     \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
-%     \uccoff\quotefont
-% }
-% {\par\hfill―\ \uccon\chapquote@author\hspace*{\@tempdima}\par\bigskip}
+% https://tex.stackexchange.com/a/601754/114006
+% \chapquote for quotes
+\def\chapquote#1{%
+   \begin{quotation} 
+       \noindent  \itshape{#1}
+   \futurelet\next\chapquoteA
+}
+\def\chapquoteA{\ifx\next[\expandafter\chapquoteB\else\expandafter\chapquoteC\fi}
+\def\chapquoteB[#1][#2]{%
+   \vskip.2\baselineskip
+   \hfill \textemdash \quad 
+   \ifx^#1^\else \normalfont #1\par \hfill \fi 
+   \footnotesize\itshape #2\par
+   \chapquoteC
+}
+\def\chapquoteC{\end{quotation}}
+
 
 % % for customizable boxes
 % \RequirePackage[many]{tcolorbox}

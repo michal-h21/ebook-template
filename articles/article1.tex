@@ -34,18 +34,17 @@
 % https://tex.stackexchange.com/a/119985/114006
 \begin{figure}[htb]
     \centering
-    \begin{subfigure}[t]{0.5\textwidth}
+    \begin{minipage}[t]{0.5\textwidth}
         \centering
         \includegraphics[height=1.2in]{example-image-a}
         \caption{Image of A}
-    \end{subfigure}%
+    \end{minipage}%
     % ~
-    \begin{subfigure}[t]{0.5\textwidth}
+    \begin{minipage}[t]{0.5\textwidth}
         \centering
         \includegraphics[height=1.2in]{example-image-b}
         \caption{Image of B}
-    \end{subfigure}
-    \caption{Comparison between the images of A and B}
+    \end{minipage}
 \end{figure}
 
 % https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_3):_Figures,_Subfigures_and_Tables
@@ -72,7 +71,7 @@
          \cprotect\caption{\verb|example-image-b|}
          \label{fig:b}
      \end{subfigure}
-        \caption{Three example images}
+        \cprotect\caption{Comparison among \verb|example-image|, \verb|example-image-a| and \verb|example-image-b|}
         \label{fig:three graphs}
 \end{figure}
 

@@ -54,18 +54,26 @@ Using \verb|\begin{enumerate} ... \end{enumerate}|
         \item Item two
 \end{enumerate}    
 
-\lipsum[3]
+\lipsum[3][1-6]
 
 \section*{সেকশন: Quote Styles}
 
-Using \verb|\chapquote| (with \verb|author| and/or \verb|source|): \\
+Example 1. \verb|\chapquote{Quote}[Author][source]|
+\chapquote{Lorem ipsum dolor sit amet, consectetur adipiscing elit.}[Quote Author][Quote Source]
 
-\chapquote{Lorem ipsum dolor sit amet}[Quote Author][Quote Source]
+Example 2. \verb|\chapquote{Quote}[Author][]|
+\chapquote{Lorem ipsum dolor sit amet, consectetur adipiscing elit.}[Quote Author][]    
 
-Using \verb|\quote| (without \verb|author| and \verb|source|): \\
+Example 3. \verb|\chapquote{Quote}[][source]|
+\chapquote{Lorem ipsum dolor sit amet, consectetur adipiscing elit.}[][Quote Source]    
 
-\quote{Lorem ipsum dolor sit amet}
+Example 4. \verb|\chapquote{Quote}| 
+\chapquote{Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
 
+Example 5. \verb|\quote{Quote}| 
+\quote{Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
+
+% \lipsum[3][1-6]
 
 % % generates a paragraph of dummy lorem ipsum text
 % \blindtext
