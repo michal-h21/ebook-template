@@ -337,3 +337,8 @@ changecounternumbering=true]{bengali}
 \makeatletter
 \renewcommand{\Hy@numberline}[1]{#1. }            % https://tex.stackexchange.com/a/150984/114006
 \makeatother
+
+% To avoid the problem of nameref and titlesec  % https://tex.stackexchange.com/a/603305/114006
+\makeatletter
+\newcommand\setcurrentname[1]{\def\@currentlabelname{#1}}
+\makeatother

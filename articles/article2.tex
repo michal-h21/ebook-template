@@ -27,9 +27,10 @@
         \caption{Donec vehicula augue eu neque.}
 \end{figure}
 
-\firstword{Y}{ou} can put a drop-cap on the first word. \blindtext \\
+\firstword{Y}{ou} can put a drop-cap on the first word. \blindtext The following two sections are named as \nameref{sec:list} and \nameref{sec:quote}.\\
 
-\section*{সেকশন: List Styles}
+\phantomsection 
+\section*{সেকশন: List Styles} \setcurrentname{List Styles} \label{sec:list}
 
 Using \verb|\begin{itemize} ... \end{itemize}|
 \begin{itemize}
@@ -57,7 +58,8 @@ Using \verb|\begin{enumerate} ... \end{enumerate}|
 
 \lipsum[3][1-6]
 
-\section*{সেকশন: Quote Styles}
+\phantomsection
+\section*{সেকশন: Quote Styles} \setcurrentname{Quote Styles} \label{sec:quote}
 
 Example 1. \verb|\chapquote{Quote}[Author][source]|
 \chapquote{Lorem ipsum dolor sit amet, consectetur adipiscing elit.}[Quote Author][Quote Source]
