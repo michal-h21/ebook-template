@@ -19,7 +19,7 @@
 % Adding dedication and preface                     https://tex.stackexchange.com/a/51539/114006
 
 \pagestyle{empty}
-\newpage \ \newpage   % additional blank page for twoside book structure
+\cleardoublepage            % additional blank page for twoside book structure
 \vspace*{\stretch{1}}
 \begin{flushright}
 \itshape
@@ -29,7 +29,7 @@
 
 \cleardoublepage
 
-\newpage
+% \newpage
 \pagestyle{plain}
 \pagenumbering{roman}
 
@@ -55,6 +55,6 @@
 \setcounter{tocdepth}{0}
 \tableofcontents
 
-\newpage
+\cleardoublepage           % additional blank page to start chapters at right pages
 \pagestyle{plain}
 \pagenumbering{arabic}
