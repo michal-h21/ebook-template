@@ -342,3 +342,21 @@ changecounternumbering=true]{bengali}
 \makeatletter
 \newcommand\setcurrentname[1]{\def\@currentlabelname{#1}}
 \makeatother
+
+% Commnad for blank page texts         % https://tex.stackexchange.com/a/66901/114006
+\newcommand*\bptext{পৃষ্ঠাটি ইচ্ছাকৃতভাবে খালি রাখা হয়েছে}
+
+\makeatletter
+\renewcommand*\cleardoublepage{%
+  \clearpage\if@twoside\ifodd\c@page\else
+  \vspace*{\fill}
+  \begin{center}
+  % \begin{minipage}{.6\textwidth}     % https://tex.stackexchange.com/a/70718/114006
+  \tiny\spaceskip=4pt\bptext
+  % \end{minipage}
+  \end{center}
+  \vfill % equivalent to \vspace{\fill}
+  % \thispagestyle{plain}
+  \newpage
+  \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
