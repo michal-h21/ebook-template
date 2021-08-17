@@ -3,7 +3,7 @@
 This ebook-template is structured as a magazine in Bangla language such that it can contain a collection of science and math articles of different authors. Thanks to [Adib Hasan](https://github.com/Neehan) for creating the beautiful [LaTeXbangla package](https://github.com/Neehan/LaTeXbangla) and [book-template](https://github.com/Neehan/book-template). I hope his repos will be more improved and will continue assisting many prospective authors to produce high quality Bangla books in future. 
 
 ## Build Instructions
-**Fonts:** You'll need `Kalpurush`, `SolaimanLipi`, `SiyamRupali` and `Monotype Corsiva` to build this project. They are not in the repo, as I do not have permission to redistribute them. So, download them from the [internet](https://www.omicronlab.com/bangla-fonts.html) and place the ttf files in the root directory. The file names have to be same as the names given above. (For instance, the file for Siyam Rupali must be named `SiyamRupali.ttf`)
+**Fonts:** You'll need `Kalpurush` and `Monotype Corsiva` to build this project. They are not in the repo, as I do not have permission to redistribute them. So, download them from the [internet](https://www.omicronlab.com/bangla-fonts.html) and place the ttf files in the root directory. The file names have to be same as the names given above. (For instance, the file for Siyam Rupali must be named `Kalpurush.ttf`)
 
 **LaTeX:** You must have a LaTeX distribution installed in your system. I recommend MikTeX for Windows and TeXWorks for Linux. To build the project, run **XeLaTeX and BibTeX** on `main.tex`. In Windows, the simplest way would be to open `main.tex` with MikTeX's default Editor, called TeXworks, then hit Build with `XeLaTeX+BibTeX+MakeIndex`. 
 
