@@ -1,5 +1,5 @@
-\providecommand\ucoff{}
-\providecommand\ucon{}
+\providecommand\uccoff{}
+\providecommand\uccon{}
 \renewcommand\quote[1]{\a:quote#1\b:quote}
 
 \NewConfigure{quote}{2}
