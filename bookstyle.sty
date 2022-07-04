@@ -18,12 +18,20 @@
 % REQUIRED PACKAGES
 %%%%%%%%%%%%%%%%%%%%%
 % latexbangla with all features
+\ifdefined\HCode
+\RequirePackage{polyglossia}
+\setmainlanguage{bengali}
+% \RequirePackage[banglamainfont=Kalpurush,
+%                 banglattfont=Kalpurush,
+%                ]{latexbangla}
+\else
 \RequirePackage[banglamainfont=Kalpurush,
                 banglattfont=Kalpurush,
                ]{latexbangla}
 %activate polyglossia
 \setdefaultlanguage[numerals=Bengali,
 changecounternumbering=true]{bengali}
+\fi
 %number all levels
 \setcounter{secnumdepth}{5}
     \setotherlanguage{english}
@@ -242,7 +250,11 @@ changecounternumbering=true]{bengali}
 % \addbibresource{bookbib.bib}
 
 % Adding pdf pages
+\ifdefined\HCode%
+\RequirePackage[dvips]{pdfpages}
+\else
 \RequirePackage{pdfpages}
+\fi
 
 %to allow long align env. to break between pages
 \allowdisplaybreaks

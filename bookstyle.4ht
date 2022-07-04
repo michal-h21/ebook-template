@@ -1,0 +1,9 @@
+\providecommand\ucoff{}
+\providecommand\ucon{}
+\renewcommand\quote[1]{\a:quote#1\b:quote}
+
+\NewConfigure{quote}{2}
+\Configure{quote}{\ifvmode\IgnorePar\fi\EndP\HCode{<blockquote>}\par\ShowPar}
+{\ifvmode\IgnorePar\fi\EndP\HCode{</blockquote>}}
+\Hinput{bookstyle}
+\endinput
